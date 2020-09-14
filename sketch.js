@@ -17,26 +17,7 @@ function draw() {
   background("white");
   bullet.velocityX = speed;
  
-  /*if (wall.x-bullet.x < (bullet.width+wall.width)/2) {
-    
-    bullet.velocityX=0;
-    var deformation=0.5 * wight*speed*speed/225099;
-     
-    if(deformation>180)
-    {
-      bullet.shapeColor=color(255,0,0);
-    }
-
-   if(deformation<180 && deformation>100)
-    {
-      bullet.shapeColor=color(230,230,0);
-    }
-
-   if (deformation<100) 
-   {  
-      bullet,shapeColor=color(0,255,0);
-   }
-  }*/
+  
 
 if (hascolided(bullet,wall)) {
  bullet.velocityX=0;
@@ -52,12 +33,12 @@ if (hascolided(bullet,wall)) {
   drawSprites();
 }
 
-function hascolided(lbullet,lwall){
+function hascolided(object1,object2){
 
-  lbulletRightEdge=lbullet.x + lbullet.width;
-  lbulletleftEdge=lwallleftEdge;
+  object1RightEdge=object1.x + object1.width;
+  object2leftEdge=object2.x;
 
-  if (lbulletRightEdge>=lwallleftEdge) {
+  if (object1RightEdge>=object2leftEdge) {
     return true;
   }
     return false;
